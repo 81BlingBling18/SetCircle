@@ -71,11 +71,11 @@ public class SELab01 {
 
     private  double maxRadius(double x, double y) {
         ArrayList<Double> rList = new ArrayList<>();
-       // rList.add(Math.abs(x - left));
-       // rList.add(Math.abs(x - right));
-       // rList.add(Math.abs(y - up));
-       // rList.add(Math.abs(y - down));
-       // Circle circle = new Circle();
+        rList.add(Math.abs(x - left));
+        rList.add(Math.abs(x - right));
+        rList.add(Math.abs(y - up));
+        rList.add(Math.abs(y - down));
+        Circle circle = new Circle();
         circle.p.x = x;
         circle.p.y = y;
         for (Circle c : maxList) {
@@ -111,12 +111,13 @@ public class SELab01 {
     }
 
     public static void main(String[] args) {
-//        ArrayList<Circle> circles = new ArrayList<>();
-//        Circle circle = new SELab01().new Circle();
-//        circle.p.x = 0;
-//        circle.p.y = 0;
-//        circles.add(circle);
+        ArrayList<Circle> circles = new ArrayList<>();
+        Circle circle = new SELab01().new Circle();
+        circle.p.x = 0;
+        circle.p.y = 0;
+        circles.add(circle);
         SELab01 lab = new SELab01();
+        //input your circle number here
         ArrayList<Circle> list = lab.start(1);
         GraphicsDemo demo = new GraphicsDemo(list);
         demo.setVisible(true);
