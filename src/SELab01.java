@@ -13,7 +13,7 @@ public class SELab01 {
     private double incD = 0.001;
     ArrayList<Circle> maxList;
     LinkedList<Point> points;
-
+    //默认构造方法，用于构造不设置钉子的方法
     public SELab01() {
         maxList = new ArrayList<>();
         points = new LinkedList<>();
@@ -23,7 +23,7 @@ public class SELab01 {
             }
         }
     }
-
+    //可以设置一定数量的钉子
     public SELab01(ArrayList<Circle> blockList) {
         maxList = blockList;
         points = new LinkedList<>();
@@ -33,14 +33,14 @@ public class SELab01 {
             }
         }
     }
-
+    //开始计算，n是要计算的数量
     public ArrayList<Circle> start(int n) {
         for (int i = 0;i<n;i++) {
             calculate();
         }
         return maxList;
     }
-
+    //产生一个圆
     private void calculate() {
         Circle c = new Circle();
         c.radius = 0;
@@ -68,7 +68,7 @@ public class SELab01 {
 
     }
 
-
+    //找出现有条件下的最大半径，方法是求当前点与四条边，所有已经确定的圆的距离，取最小值
     private  double maxRadius(double x, double y) {
         ArrayList<Double> rList = new ArrayList<>();
         rList.add(Math.abs(x - left));
@@ -91,7 +91,7 @@ public class SELab01 {
         System.out.println(result);
         return result;
     }
-
+    //计算两个圆心的距离
     private double distance(Circle c1, Circle c2) {
         return Math.sqrt((c1.p.x - c2.p.x) * (c1.p.x - c2.p.x) + (c1.p.y - c2.p.y) * (c1.p.y - c2.p.y));
     }
@@ -121,7 +121,5 @@ public class SELab01 {
         ArrayList<Circle> list = lab.start(1);
         GraphicsDemo demo = new GraphicsDemo(list);
         demo.setVisible(true);
-
-
     }
 }
