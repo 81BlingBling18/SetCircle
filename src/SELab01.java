@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 /**
  * Created by wqm on 6/8/17.
- */
+ **/
 public class SELab01 {
     private double up=1;
     private double right=1;
