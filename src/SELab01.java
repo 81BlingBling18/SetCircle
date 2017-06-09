@@ -10,7 +10,7 @@ public class SELab01 {
     private double right=1;
     private double down = -1;
     private double left = -1;
-    private double incD = 0.001;
+    private double incD = 0.01;
     ArrayList<Circle> maxList;
     LinkedList<Point> points;
     //默认构造方法，用于构造不设置钉子的方法
@@ -116,9 +116,17 @@ public class SELab01 {
         circle.p.x = 0;
         circle.p.y = 0;
         circles.add(circle);
-        SELab01 lab = new SELab01();
+        Circle circle2 = new SELab01().new Circle();
+        circle2.p.x = -0.5;
+        circle2.p.y = -0.5;
+        circles.add(circle2);
+        Circle circle3 = new SELab01().new Circle();
+        circle3.p.x = -0.5;
+        circle3.p.y = 0.5;
+        circles.add(circle3);
+        SELab01 lab = new SELab01(circles);
         //input your circle number here
-        ArrayList<Circle> list = lab.start(1);
+        ArrayList<Circle> list = lab.start(100);
         GraphicsDemo demo = new GraphicsDemo(list);
         demo.setVisible(true);
     }
