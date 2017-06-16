@@ -1,5 +1,17 @@
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.PerspectiveCamera;
+import javafx.scene.Scene;
+import javafx.scene.SubScene;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Material;
+import javafx.scene.paint.PhongMaterial;
+import javafx.scene.shape.*;
+import javafx.scene.transform.Rotate;
+import javafx.scene.transform.Translate;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,7 +20,7 @@ import java.util.LinkedList;
 /**
  * Created by wqm on 6/9/17.
  */
-public class SELab03 {
+public class SELab03 extends Application{
     private double up=1;
     private double right=1;
     private double down = -1;
@@ -16,6 +28,7 @@ public class SELab03 {
     private double front = 1;
     private double back = -1;
     private double incD = 0.01;
+    private int blockNumber = 0;
     ArrayList<SELab03.Circle> maxList;
     LinkedList<SELab03.Point> points;
     //默认构造方法，用于构造不设置钉子的方法
@@ -29,10 +42,10 @@ public class SELab03 {
                 }
             }
         }
-
     }
     //可以设置一定数量的钉子
     public SELab03(ArrayList<SELab03.Circle> blockList) {
+        blockNumber = blockList.size();
         maxList = blockList;
         points = new LinkedList<>();
         for (double k = back + incD;k<front;k+=incD) {
@@ -48,7 +61,14 @@ public class SELab03 {
         for (int i = 0;i<n;i++) {
             calculate();
         }
-        return maxList;
+        if (blockNumber != 0) {
+            ArrayList<Circle> list = (ArrayList<Circle>) maxList.subList(blockNumber - 1, maxList.size());
+            blockNumber = 0;
+            return list;
+        } else {
+            return maxList;
+        }
+
     }
     //产生一个圆
     private void calculate() {
@@ -125,39 +145,57 @@ public class SELab03 {
         double z;
     }
 
-    public static void main(String[] args) {
-//        ArrayList<SELab01.Circle> circles = new ArrayList<>();
-//        SELab01.Circle circle = new SELab01().new Circle();
-//        circle.p.x = 0;
-//        circle.p.y = 0;
-//        circles.add(circle);
-//        SELab01.Circle circle2 = new SELab01().new Circle();
-//        circle2.p.x = -0.5;
-//        circle2.p.y = -0.5;
-//        circles.add(circle2);
-//        SELab01.Circle circle3 = new SELab01().new Circle();
-//        circle3.p.x = -0.5;
-//        circle3.p.y = 0.5;
-//        circles.add(circle3);
+    //重写start方法，用来展示球体
+    @Override
+    public void start(Stage stage) {
+        //计算圆的半径和位置
         SELab03 lab = new SELab03();
-        //input your circle number here
-        ArrayList<SELab03.Circle> list = lab.start(100);
-       // GraphicsDemo demo = new GraphicsDemo(list);
-        //demo.setVisible(true);
+        ArrayList<Circle> list =lab.start(10 );
 
+        Shape3D[] circles = new Sphere[list.size()];
+
+
+        // Create and position camera
+        PerspectiveCamera camera = new PerspectiveCamera(true);
+        camera.getTransforms().addAll (
+                new Rotate(-20, Rotate.Y_AXIS),
+                new Rotate(-20, Rotate.X_AXIS),
+                new Translate(0, 0, -15));
+
+        // Build the Scene Graph
+        Group root = new Group();
+        root.getChildren().add(camera);
+
+        for (int i = 0;i<list.size();i++) {
+            Sphere sphere = new Sphere();
+            circles[i] = sphere;
+            sphere.setRadius(list.get(i).radius * 2);
+            sphere.setCullFace(CullFace.BACK);
+
+            circles[i].setTranslateX(list.get(i).p.x * 2);
+            circles[i].setTranslateY(list.get(i).p.y * 2);
+            circles[i].setTranslateZ(list.get(i).p.z * 2);
+
+            System.out.println("x:" + (list.get(i).p.x * 200 + 500) + "y:" + (list.get(i).p.y * 500 + 500) + "z:" + (list.get(i).p.z * 500 + 500));
+        }
+        root.getChildren().addAll(circles);
+
+        // Use a SubScene
+        SubScene subScene = new SubScene(root, 500,500);
+        subScene.setFill(Color.ALICEBLUE);
+        subScene.setCamera(camera);
+        Group group = new Group();
+        group.getChildren().add(subScene);
+
+
+        //Adding scene to the stage
+        stage.setScene(new Scene(group)) ;
+
+        //Displaying the contents of the stage
+        stage.show() ;
+    }
+    public static void main(String[] args) {
+        launch(args);
     }
 
-    public void display(GLAutoDrawable drawable) {
-        final GL2 gl = drawable.getGL().getGL2();
-        gl.glBegin(GL2.GL_POLYGON);
-        gl.glVertex3f(0f,0.5f,0f);
-        gl.glVertex3f(-0.5f,0.2f,0f);
-        gl.glVertex3f(-0.5f,-0.2f,0f);
-        gl.glVertex3f(0f,-0.5f,0f);
-        gl.glVertex3f(0f,0.5f,0f);
-        gl.glVertex3f(0.5f,0.2f,0f);
-        gl.glVertex3f(0.5f,-0.2f,0f);
-        gl.glVertex3f(0f,-0.5f,0f);
-        gl.glEnd();
-    }
 }

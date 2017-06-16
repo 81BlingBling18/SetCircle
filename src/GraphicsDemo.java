@@ -18,8 +18,7 @@ public class GraphicsDemo extends JFrame {
     @Override
     public void paint(Graphics g) {
 
-        // 画椭圆形
-        for (SELab01.Circle c : list) {
+         for (SELab01.Circle c : list) {
             // System.out.println((int)(c.p.x*500+500) + "  " +(int)(c.p.y*500+500) + "  " +(int)(c.radius*500*2)+" "+ (int)(c.radius*500*2));
             g.drawOval((int)(c.p.x*500+500 -c.radius*500)+50, (int)(c.p.y*500+500 -c.radius*500)+50, (int)(c.radius*500*2), (int)(c.radius*500*2));
 
