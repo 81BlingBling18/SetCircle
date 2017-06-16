@@ -65,7 +65,6 @@ public class SELab03 extends Application{
         } else {
             return maxList;
         }
-
     }
     //产生一个圆
     private void calculate() {
@@ -147,7 +146,7 @@ public class SELab03 extends Application{
     public void start(Stage stage) {
         //计算圆的半径和位置
         SELab03 lab = new SELab03();
-        ArrayList<Circle> list =lab.start(10 );
+        ArrayList<Circle> list =lab.start(50 );
 
         Shape3D[] circles = new Shape3D[list.size()];
 
@@ -180,14 +179,7 @@ public class SELab03 extends Application{
 
         root.getChildren().add(pointLight);
 
-//        // Use a SubScene
-//        SubScene subScene = new SubScene(root, 500,500);
-//        subScene.setFill(Color.ALICEBLUE);
-//        subScene.setCamera(camera);
-//        Group group = new Group();
-//       // group.getChildren().add(subScene);
-//
-//        //Adding scene to the stage
+
         Scene scene = new Scene(root,800,800,true);
         scene.setFill(Color.WHITE);
 
