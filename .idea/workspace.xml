@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7260bf4b-df44-4b95-bc2d-89308184fb39" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hs_err_pid22514.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SetCircle/GraphicsDemo.class" afterPath="$PROJECT_DIR$/out/production/SetCircle/GraphicsDemo.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SetCircle/SELab03$Circle.class" afterPath="$PROJECT_DIR$/out/production/SetCircle/SELab03$Circle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SetCircle/SELab03$Point.class" afterPath="$PROJECT_DIR$/out/production/SetCircle/SELab03$Point.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SetCircle/SELab03.class" afterPath="$PROJECT_DIR$/out/production/SetCircle/SELab03.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GraphicsDemo.java" afterPath="$PROJECT_DIR$/src/GraphicsDemo.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SELab03.java" afterPath="$PROJECT_DIR$/src/SELab03.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -28,18 +21,17 @@
       <file leaf-file-name="SELab03.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SELab03.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13">
-              <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+            <state relative-caret-position="792">
+              <caret line="187" column="46" lean-forward="true" selection-start-line="187" selection-start-column="46" selection-end-line="187" selection-end-column="46" />
               <folding>
                 <element signature="docComment;class#SELab03#0" expanded="false" />
-                <element signature="method#calculate#0;class#SELab03#0" expanded="false" />
                 <element signature="method#maxRadius#0;class#SELab03#0" expanded="false" />
                 <element signature="method#distance#0;class#SELab03#0" expanded="false" />
                 <element signature="class#Circle#0;class#SELab03#0" expanded="false" />
                 <element signature="class#Point#0;class#SELab03#0" expanded="false" />
                 <element signature="method#Point#0;class#Point#0;class#SELab03#0" expanded="false" />
-                <element signature="e#6188#6189#0" expanded="true" />
-                <element signature="e#6216#6217#0" expanded="true" />
+                <element signature="e#6451#6452#0" expanded="true" />
+                <element signature="e#6479#6480#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,6 +101,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>itera</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -664,16 +661,16 @@
       <workItem from="1497538302026" duration="286000" />
       <workItem from="1497540837565" duration="692000" />
       <workItem from="1497574523469" duration="275000" />
-      <workItem from="1497586970147" duration="4705000" />
+      <workItem from="1497586970147" duration="6405000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19065000" />
+    <option name="totallyTimeSpent" value="20765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -684,10 +681,10 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3568421" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3568421" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.71894735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.71894735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26093918" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -768,14 +765,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#SELab03#0" expanded="false" />
-            <element signature="method#calculate#0;class#SELab03#0" expanded="false" />
             <element signature="method#maxRadius#0;class#SELab03#0" expanded="false" />
             <element signature="method#distance#0;class#SELab03#0" expanded="false" />
             <element signature="class#Circle#0;class#SELab03#0" expanded="false" />
             <element signature="class#Point#0;class#SELab03#0" expanded="false" />
             <element signature="method#Point#0;class#Point#0;class#SELab03#0" expanded="false" />
-            <element signature="e#6188#6189#0" expanded="true" />
-            <element signature="e#6216#6217#0" expanded="true" />
+            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="e#6479#6480#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -804,14 +800,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#SELab03#0" expanded="false" />
-            <element signature="method#calculate#0;class#SELab03#0" expanded="false" />
             <element signature="method#maxRadius#0;class#SELab03#0" expanded="false" />
             <element signature="method#distance#0;class#SELab03#0" expanded="false" />
             <element signature="class#Circle#0;class#SELab03#0" expanded="false" />
             <element signature="class#Point#0;class#SELab03#0" expanded="false" />
             <element signature="method#Point#0;class#Point#0;class#SELab03#0" expanded="false" />
-            <element signature="e#6188#6189#0" expanded="true" />
-            <element signature="e#6216#6217#0" expanded="true" />
+            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="e#6479#6480#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -840,14 +835,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#SELab03#0" expanded="false" />
-            <element signature="method#calculate#0;class#SELab03#0" expanded="false" />
             <element signature="method#maxRadius#0;class#SELab03#0" expanded="false" />
             <element signature="method#distance#0;class#SELab03#0" expanded="false" />
             <element signature="class#Circle#0;class#SELab03#0" expanded="false" />
             <element signature="class#Point#0;class#SELab03#0" expanded="false" />
             <element signature="method#Point#0;class#Point#0;class#SELab03#0" expanded="false" />
-            <element signature="e#6188#6189#0" expanded="true" />
-            <element signature="e#6216#6217#0" expanded="true" />
+            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="e#6479#6480#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,14 +870,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#SELab03#0" expanded="false" />
-            <element signature="method#calculate#0;class#SELab03#0" expanded="false" />
             <element signature="method#maxRadius#0;class#SELab03#0" expanded="false" />
             <element signature="method#distance#0;class#SELab03#0" expanded="false" />
             <element signature="class#Circle#0;class#SELab03#0" expanded="false" />
             <element signature="class#Point#0;class#SELab03#0" expanded="false" />
             <element signature="method#Point#0;class#Point#0;class#SELab03#0" expanded="false" />
-            <element signature="e#6188#6189#0" expanded="true" />
-            <element signature="e#6216#6217#0" expanded="true" />
+            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="e#6479#6480#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -912,14 +905,13 @@
           <caret line="77" column="9" lean-forward="true" selection-start-line="77" selection-start-column="9" selection-end-line="77" selection-end-column="9" />
           <folding>
             <element signature="docComment;class#SELab03#0" expanded="false" />
-            <element signature="method#calculate#0;class#SELab03#0" expanded="false" />
             <element signature="method#maxRadius#0;class#SELab03#0" expanded="false" />
             <element signature="method#distance#0;class#SELab03#0" expanded="false" />
             <element signature="class#Circle#0;class#SELab03#0" expanded="false" />
             <element signature="class#Point#0;class#SELab03#0" expanded="false" />
             <element signature="method#Point#0;class#Point#0;class#SELab03#0" expanded="false" />
-            <element signature="e#6188#6189#0" expanded="true" />
-            <element signature="e#6216#6217#0" expanded="true" />
+            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="e#6479#6480#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1131,18 +1123,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SELab03.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+        <state relative-caret-position="792">
+          <caret line="187" column="46" lean-forward="true" selection-start-line="187" selection-start-column="46" selection-end-line="187" selection-end-column="46" />
           <folding>
             <element signature="docComment;class#SELab03#0" expanded="false" />
-            <element signature="method#calculate#0;class#SELab03#0" expanded="false" />
             <element signature="method#maxRadius#0;class#SELab03#0" expanded="false" />
             <element signature="method#distance#0;class#SELab03#0" expanded="false" />
             <element signature="class#Circle#0;class#SELab03#0" expanded="false" />
             <element signature="class#Point#0;class#SELab03#0" expanded="false" />
             <element signature="method#Point#0;class#Point#0;class#SELab03#0" expanded="false" />
-            <element signature="e#6188#6189#0" expanded="true" />
-            <element signature="e#6216#6217#0" expanded="true" />
+            <element signature="e#6451#6452#0" expanded="true" />
+            <element signature="e#6479#6480#0" expanded="true" />
           </folding>
         </state>
       </provider>

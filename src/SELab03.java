@@ -1,10 +1,7 @@
 import com.jogamp.opengl.GL2;
 import com.jogamp.opengl.GLAutoDrawable;
 import javafx.application.Application;
-import javafx.scene.Group;
-import javafx.scene.PerspectiveCamera;
-import javafx.scene.Scene;
-import javafx.scene.SubScene;
+import javafx.scene.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Material;
 import javafx.scene.paint.PhongMaterial;
@@ -152,44 +149,50 @@ public class SELab03 extends Application{
         SELab03 lab = new SELab03();
         ArrayList<Circle> list =lab.start(10 );
 
-        Shape3D[] circles = new Sphere[list.size()];
-
+        Shape3D[] circles = new Shape3D[list.size()];
 
         // Create and position camera
-        PerspectiveCamera camera = new PerspectiveCamera(true);
+        PerspectiveCamera camera = new PerspectiveCamera(false);
         camera.getTransforms().addAll (
                 new Rotate(-20, Rotate.Y_AXIS),
-                new Rotate(-20, Rotate.X_AXIS),
-                new Translate(0, 0, -15));
-
-        // Build the Scene Graph
-        Group root = new Group();
-        root.getChildren().add(camera);
+                new Rotate(-20, Rotate.X_AXIS));
+        camera.setTranslateX(0);
+        camera.setTranslateY(0);
+        camera.setTranslateZ(0);
 
         for (int i = 0;i<list.size();i++) {
-            Sphere sphere = new Sphere();
-            circles[i] = sphere;
-            sphere.setRadius(list.get(i).radius * 2);
-            sphere.setCullFace(CullFace.BACK);
-
-            circles[i].setTranslateX(list.get(i).p.x * 2);
-            circles[i].setTranslateY(list.get(i).p.y * 2);
-            circles[i].setTranslateZ(list.get(i).p.z * 2);
-
+            circles[i] = new Sphere(list.get(i).radius * 200);
+            circles[i].setCullFace(CullFace.BACK);
+            circles[i].setTranslateX(list.get(i).p.x * 200+400);
+            circles[i].setTranslateY(list.get(i).p.y * 200+400);
+            circles[i].setTranslateZ(list.get(i).p.z * 200+400);
+            circles[i].setTranslateZ(list.get(i).p.z * 200+400);
             System.out.println("x:" + (list.get(i).p.x * 200 + 500) + "y:" + (list.get(i).p.y * 500 + 500) + "z:" + (list.get(i).p.z * 500 + 500));
         }
-        root.getChildren().addAll(circles);
 
-        // Use a SubScene
-        SubScene subScene = new SubScene(root, 500,500);
-        subScene.setFill(Color.ALICEBLUE);
-        subScene.setCamera(camera);
-        Group group = new Group();
-        group.getChildren().add(subScene);
+        // Build the Scene Graph
+        Group root = new Group(circles);
 
+        PointLight pointLight = new PointLight(Color.ANTIQUEWHITE);
+        pointLight.setTranslateX(800);
+        pointLight.setTranslateY(-100);
+        pointLight.setTranslateZ(-1000);
 
-        //Adding scene to the stage
-        stage.setScene(new Scene(group)) ;
+        root.getChildren().add(pointLight);
+
+//        // Use a SubScene
+//        SubScene subScene = new SubScene(root, 500,500);
+//        subScene.setFill(Color.ALICEBLUE);
+//        subScene.setCamera(camera);
+//        Group group = new Group();
+//       // group.getChildren().add(subScene);
+//
+//        //Adding scene to the stage
+        Scene scene = new Scene(root,800,800,true);
+        scene.setFill(Color.WHITE);
+
+        scene.setCamera(camera);
+        stage.setScene(scene) ;
 
         //Displaying the contents of the stage
         stage.show() ;
