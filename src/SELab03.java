@@ -9,15 +9,18 @@ import javafx.scene.shape.*;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Translate;
 import javafx.stage.Stage;
+import sun.net.www.protocol.file.Handler;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+
 /**
  * Created by wqm on 6/9/17.
  */
 public class SELab03 extends Application{
+
     private double up=1;
     private double right=1;
     private double down = -1;
@@ -26,8 +29,25 @@ public class SELab03 extends Application{
     private double back = -1;
     private double incD = 0.01;
     private int blockNumber = 0;
-    ArrayList<SELab03.Circle> maxList;
-    LinkedList<SELab03.Point> points;
+    private ArrayList<SELab03.Circle> maxList;
+    private LinkedList<SELab03.Point> points;
+    private volatile int f;
+    private volatile int b;
+
+
+    Runnable forward = new Runnable() {
+        @Override
+        public void run() {
+
+        }
+    };
+    Runnable backward = new Runnable() {
+        @Override
+        public void run() {
+
+        }
+    };
+
     //默认构造方法，用于构造不设置钉子的方法
     public SELab03() {
         maxList = new ArrayList<>();
@@ -66,6 +86,7 @@ public class SELab03 extends Application{
             return maxList;
         }
     }
+
     //产生一个圆
     private void calculate() {
         SELab03.Circle c = new SELab03.Circle();
@@ -78,12 +99,12 @@ public class SELab03 extends Application{
                 c.p = p;
                 c.radius = r;
             }
-
         }
         maxList.add(c);
+        System.out.println("find one");
 
         Iterator<SELab03.Point> iterator = points.iterator();
-        System.out.println(points.size());
+        //System.out.println(points.size());
         while (iterator.hasNext()) {
             SELab03.Point p = iterator.next();
             SELab03.Circle circle = new SELab03.Circle();
@@ -92,7 +113,7 @@ public class SELab03 extends Application{
                 iterator.remove();
             }
         }
-        System.out.println("maxR " + c.radius + "x= " + c.p.x + "y= " + c.p.y+ "z= " + c.p.z + "list size:" + points.size());
+        //System.out.println("maxR " + c.radius + "x= " + c.p.x + "y= " + c.p.y+ "z= " + c.p.z + "list size:" + points.size());
     }
 
     //找出现有条件下的最大半径，方法是求当前点与四条边，所有已经确定的圆的距离，取最小值
@@ -146,7 +167,7 @@ public class SELab03 extends Application{
     public void start(Stage stage) {
         //计算圆的半径和位置
         SELab03 lab = new SELab03();
-        ArrayList<Circle> list =lab.start(50 );
+        ArrayList<Circle> list =lab.start(20 );
 
         Shape3D[] circles = new Shape3D[list.size()];
 
@@ -166,7 +187,7 @@ public class SELab03 extends Application{
             circles[i].setTranslateY(list.get(i).p.y * 200+400);
             circles[i].setTranslateZ(list.get(i).p.z * 200+400);
             circles[i].setTranslateZ(list.get(i).p.z * 200+400);
-            System.out.println("x:" + (list.get(i).p.x * 200 + 500) + "y:" + (list.get(i).p.y * 500 + 500) + "z:" + (list.get(i).p.z * 500 + 500));
+           // System.out.println("x:" + (list.get(i).p.x * 200 + 500) + "y:" + (list.get(i).p.y * 500 + 500) + "z:" + (list.get(i).p.z * 500 + 500));
         }
 
         // Build the Scene Graph
