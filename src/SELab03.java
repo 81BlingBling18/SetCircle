@@ -27,6 +27,7 @@ public class SELab03 extends Application{
     private double left = -1;
     private double front = 1;
     private double back = -1;
+    //此处修改步长，步长越小精度越高，耗时越长
     private double incD = 0.05;
     private int blockNumber = 0;
     private ArrayList<SELab03.Circle> maxList;
@@ -34,19 +35,6 @@ public class SELab03 extends Application{
     private volatile int f;
     private volatile int b;
 
-
-    Runnable forward = new Runnable() {
-        @Override
-        public void run() {
-
-        }
-    };
-    Runnable backward = new Runnable() {
-        @Override
-        public void run() {
-
-        }
-    };
 
     //默认构造方法，用于构造不设置钉子的方法
     public SELab03() {
@@ -87,7 +75,7 @@ public class SELab03 extends Application{
         }
     }
 
-    //产生一个圆
+    //找出当前条件下的半径最大的球体，并将其加入maxList
     private void calculate() {
         SELab03.Circle c = new SELab03.Circle();
         c.radius = 0;
@@ -167,6 +155,7 @@ public class SELab03 extends Application{
     public void start(Stage stage) {
         //计算圆的半径和位置
         SELab03 lab = new SELab03();
+        //此处修改球体数量
         ArrayList<Circle> list =lab.start(1000 );
 
         Shape3D[] circles = new Shape3D[list.size()];
