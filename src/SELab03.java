@@ -27,7 +27,7 @@ public class SELab03 extends Application{
     private double left = -1;
     private double front = 1;
     private double back = -1;
-    private double incD = 0.01;
+    private double incD = 0.05;
     private int blockNumber = 0;
     private ArrayList<SELab03.Circle> maxList;
     private LinkedList<SELab03.Point> points;
@@ -167,7 +167,7 @@ public class SELab03 extends Application{
     public void start(Stage stage) {
         //计算圆的半径和位置
         SELab03 lab = new SELab03();
-        ArrayList<Circle> list =lab.start(20 );
+        ArrayList<Circle> list =lab.start(1000 );
 
         Shape3D[] circles = new Shape3D[list.size()];
 

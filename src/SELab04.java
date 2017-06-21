@@ -39,6 +39,8 @@ public class SELab04 extends Application {
     private volatile Point maxRadiusPoint = null;
     private int ballNumber;
     private ExecutorService threadPool = Executors.newCachedThreadPool();
+    static Long start;
+    static Long end;
 
     //用四个线程来跑
     private Runnable first = new Runnable() {
@@ -256,7 +258,7 @@ public class SELab04 extends Application {
         camera.setTranslateZ(0);
 
         for (int i = 0; i < maxList.size(); i++) {
-            System.out.println(maxList.size() + "x:" + (maxList.get(i).p.x * 200 + 500) + "y:" + (maxList.get(i).p.y * 500 + 500) + "z:" + (maxList.get(i).p.z * 500 + 500));
+            System.out.printf("ball sum %d,r:%f,x:%.3f,y:%.3f,z:%.3f\n",maxList.size(),maxList.get(i).radius,maxList.get(i).p.x,maxList.get(i).p.y,maxList.get(i).p.z);
 
             circles[i] = new Sphere(maxList.get(i).radius * 200);
             circles[i].setCullFace(CullFace.BACK);
@@ -282,18 +284,22 @@ public class SELab04 extends Application {
 
         scene.setCamera(camera);
         stage.setScene(scene);
-
+        end = System.currentTimeMillis();
+        System.out.println("计算时间为" + (end-start)/1000);
         //Displaying the contents of the stage
         stage.show();
     }
 
-    public static void main(String[] args) ddd{
+    //若不添加钉子，可以直接运行程序后在命令行输入步长和球体个数
+    //若添加钉子，则需要在list中添加钉子的坐标
+    public static void main(String[] args) {
+        start  = System.currentTimeMillis();
         Scanner scanner = new Scanner(System.in);
 
         String num = "hell";
         String step = "-0.0";
-        while (!num.matches("^[0-9]*$") || num.contains("-")) {
-            System.out.println("请输入要生成的圆的个数(大于0的整数)：");
+        while (!num.matches("^[1-9][0-9]*$") || num.contains("-")) {
+            System.out.println("请输入要生成的球的个数(大于0的整数)：");
             num = scanner.nextLine();
         }
 
@@ -307,14 +313,22 @@ public class SELab04 extends Application {
         SELab04 lab = new SELab04();
         //在List中添加小方块
         ArrayList<SELab04.Circle> list = new ArrayList<>();
-        SELab04.Circle circle = new SELab04().new Circle();
-        circle.p.x = 0;
-        circle.p.y = 0;
-        circle.p.z = 0;
-        list.add(circle);
-        lab.start(Integer.valueOf(num), Double.valueOf(step), list);
-
-
+        SELab04.Circle c1 = new SELab04().new Circle();
+        c1.p.x = 0;
+        c1.p.y = 0;
+        c1.p.z = 0;
+        list.add(c1);
+        SELab04.Circle c2 = new SELab04().new Circle();
+        c2.p.x = 0.5;
+        c2.p.y = 0.5;
+        c2.p.z = 0.5;
+        list.add(c2);
+        SELab04.Circle c3 = new SELab04().new Circle();
+        c3.p.x = -0.5;
+        c3.p.y = -0.5;
+        c3.p.z = -0.5;
+        list.add(c3);
+        lab.start(Integer.valueOf(num), Double.valueOf(step),list);
     }
 
     //内部类用于定义圆和点
